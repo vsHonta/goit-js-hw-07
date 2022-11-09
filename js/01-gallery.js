@@ -34,12 +34,17 @@ const onClick = evt => {
         <img src="${evt.target.dataset.source}" width="800" height="600">
     `)
     console.log(evt.target.dataset.source);
+
+    const onKeyDownEscape = evt => {
+        if (evt.key === 'Escape') {
+            instance.close()
+        }
+    }
+    document.addEventListener('keydown', onKeyDownEscape)
+
     return instance.show()
 }
 
-// const onEscapeClose = evt => {
-//     return instance.close()
-// }
 
 
 
